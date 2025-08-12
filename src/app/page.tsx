@@ -209,6 +209,17 @@ export default function Home() {
           >
             <GitHubIcon />
           </a>
+          <span className="opacity-70">•</span>
+          <a
+            href="https://mypersonalwebsite-smoky.vercel.app/"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="hover:opacity-80"
+            aria-label="Live site"
+            title="Live site"
+          >
+            Live at mypersonalwebsite-smoky.vercel.app
+          </a>
           <a href="#home" className="hover:opacity-80">Back to top ↑</a>
         </div>
       </footer>
