@@ -35,7 +35,7 @@ export interface Profile {
 export const profile: Profile = {
   name: "Ankit Bajpai",
   title: "MarTech Expert | AI Advisory",
-  bio: "With over a decade of experience in digital marketing and technology consulting, I specialize in leveraging AI and customer data intelligence to create hyper-personalized experiences that drive business growth. As the Head of Digital Marketing Practice at Nagarro, I lead breakthrough strategies that redefine modern marketing for global brands. Let’s connect and explore how Data Intelligence + Technology + AI can transform your customer engagement.",
+  bio: "With about one and half decade of experience in digital marketing and technology consulting, I specialize in leveraging AI and customer data intelligence to create hyper-personalized experiences that drive business growth. As the Head of Digital Marketing Practice at Nagarro, I lead breakthrough strategies that redefine modern marketing for global brands. Let’s connect and explore how Data Intelligence + Technology + AI can transform your customer engagement.",
   experience: [
   {
     "role": "MarTech Practice Head",
