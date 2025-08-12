@@ -69,7 +69,7 @@ export const profile: Profile = {
       issuer: "UCLA Anderson",
       url: "https://verified.sertifier.com/en/verify/07018855706328/",
       description: "Management program focused on strategy, leadership, and business fundamentals from UCLA Anderson.",
-      logo: "https://upload.wikimedia.org/wikipedia/commons/7/72/UCLA_Anderson_School_of_Management_logo.svg",
+      logo: "/ucla-anderson.svg",
       badges: ["Management", "Leadership", "Strategy"]
     },
     {

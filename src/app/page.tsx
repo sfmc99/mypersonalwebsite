@@ -122,7 +122,14 @@ export default function Home() {
           <div className="relative aspect-square w-full max-w-[360px] md:max-w-none md:w-[420px] mx-auto">
             <div className="absolute inset-0 rounded-2xl bg-gradient-to-br from-blue-500/20 via-cyan-400/10 to-purple-500/20 blur-2xl" />
             <div className="relative h-full w-full rounded-2xl border border-black/10 dark:border-white/10 bg-background/60 backdrop-blur flex items-center justify-center">
-              <Image src="/globe.svg" alt="abstract" width={96} height={96} className="opacity-80 dark:invert" />
+              <Image
+                src="/PersonalImage.png"
+                alt="Ankit Bajpai profile photo"
+                width={160}
+                height={160}
+                className="h-40 w-40 rounded-full object-cover shadow-sm"
+                priority
+              />
             </div>
           </div>
         </div>
