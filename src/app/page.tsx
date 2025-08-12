@@ -16,6 +16,16 @@ function LinkedInIcon(props: React.SVGProps<SVGSVGElement>) {
   );
 }
 
+function getInitials(text: string) {
+  try {
+    const words = text.split(/\s+/).filter(Boolean);
+    const letters = (words[0]?.[0] || "").toUpperCase() + (words[1]?.[0] || "").toUpperCase();
+    return letters || "";
+  } catch {
+    return "";
+  }
+}
+
 function GitHubIcon(props: React.SVGProps<SVGSVGElement>) {
   return (
     <svg
@@ -156,27 +166,67 @@ export default function Home() {
         <p className="mt-2 text-sm text-black/70 dark:text-white/60">Selected certifications and credentials.</p>
         {Array.isArray((profile as any).certifications) && (profile as any).certifications.length ? (
           <div className="mt-6 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6">
-            {(profile as any).certifications.map((c: any, i: number) => (
-              <article key={i} className="rounded-xl border border-black/10 dark:border-white/10 p-5 bg-background/60 hover:bg-black/5 dark:hover:bg-white/5 transition">
-                <h3 className="font-semibold">{c.title}</h3>
-                <div className="mt-1 text-xs text-black/60 dark:text-white/60">{c.issuer}</div>
-                {c.description ? (
-                  <p className="mt-2 text-sm text-black/75 dark:text-white/70">{c.description}</p>
-                ) : null}
-                {c.url ? (
-                  <a
-                    href={c.url}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="mt-3 inline-block text-sm underline underline-offset-4 opacity-90 hover:opacity-100"
-                  >
-                    View credential
-                  </a>
-                ) : (
-                  <span className="mt-3 inline-block text-sm opacity-70">Credential details unavailable</span>
-                )}
-              </article>
-            ))}
+            {(profile as any).certifications.map((c: any, i: number) => {
+              const featured = i === 0;
+              const colSpan = featured ? "lg:col-span-2 lg:row-span-2" : "";
+              return (
+                <article
+                  key={i}
+                  className={`rounded-xl border border-black/10 dark:border-white/10 p-5 sm:p-6 bg-background/60 hover:bg-black/5 dark:hover:bg-white/5 transition ${colSpan}`}
+                >
+                  <div className="flex items-center gap-3">
+                    {c.logo ? (
+                      <img
+                        src={c.logo}
+                        alt={`${c.issuer || c.title} logo`}
+                        className="h-8 w-8 rounded-md object-contain bg-white/50 dark:bg-white/10 p-1"
+                      />
+                    ) : (
+                      <div className="h-8 w-8 rounded-md bg-gradient-to-br from-blue-500/20 via-cyan-400/20 to-purple-500/20 flex items-center justify-center text-xs font-medium">
+                        {getInitials(c.issuer || c.title)}
+                      </div>
+                    )}
+                    <div className="min-w-0">
+                      <h3 className={`font-semibold truncate ${featured ? "text-lg" : ""}`}>{c.title}</h3>
+                      <div className="mt-0.5 text-xs text-black/60 dark:text-white/60 truncate">{c.issuer}</div>
+                    </div>
+                  </div>
+
+                  {c.description ? (
+                    <p className={`mt-3 text-sm text-black/75 dark:text-white/70 ${featured ? "md:text-base" : ""}`}>{c.description}</p>
+                  ) : null}
+
+                  {Array.isArray(c.badges) && c.badges.length ? (
+                    <div className="mt-3 flex flex-wrap gap-2">
+                      {c.badges.map((b: string, bi: number) => (
+                        <span
+                          key={bi}
+                          className="inline-flex items-center rounded-full border border-black/10 dark:border-white/15 px-2.5 py-1 text-xs text-black/70 dark:text-white/70 bg-background/80"
+                        >
+                          {b}
+                        </span>
+                      ))}
+                    </div>
+                  ) : null}
+
+                  <div className="mt-4">
+                    {c.url ? (
+                      <a
+                        href={c.url}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="inline-flex items-center gap-2 text-sm underline underline-offset-4 opacity-90 hover:opacity-100"
+                      >
+                        View credential
+                        <span aria-hidden>↗</span>
+                      </a>
+                    ) : (
+                      <span className="text-sm opacity-70">Credential details unavailable</span>
+                    )}
+                  </div>
+                </article>
+              );
+            })}
           </div>
         ) : (
           <p className="mt-4 text-sm text-black/70 dark:text-white/60">No certifications added yet.</p>
