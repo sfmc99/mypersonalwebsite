@@ -1,6 +1,36 @@
 import Image from "next/image";
 import { profile } from "@/content/profile";
 
+function LinkedInIcon(props: React.SVGProps<SVGSVGElement>) {
+  return (
+    <svg
+      viewBox="0 0 24 24"
+      aria-hidden="true"
+      fill="currentColor"
+      width="20"
+      height="20"
+      {...props}
+    >
+      <path d="M20.447 20.452h-3.555v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.447-2.136 2.943v5.663H9.35V9h3.414v1.561h.049c.476-.9 1.637-1.852 3.369-1.852 3.603 0 4.268 2.372 4.268 5.458v6.285zM5.337 7.433a2.064 2.064 0 1 1 0-4.129 2.064 2.064 0 0 1 0 4.129zM7.114 20.452H3.558V9h3.556v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.226.792 24 1.771 24h20.451C23.2 24 24 23.226 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z" />
+    </svg>
+  );
+}
+
+function GitHubIcon(props: React.SVGProps<SVGSVGElement>) {
+  return (
+    <svg
+      viewBox="0 0 24 24"
+      aria-hidden="true"
+      fill="currentColor"
+      width="20"
+      height="20"
+      {...props}
+    >
+      <path d="M12 .5a11.5 11.5 0 0 0-3.635 22.41c.576.105.788-.25.788-.556 0-.275-.01-1.003-.016-1.97-3.205.696-3.88-1.545-3.88-1.545-.523-1.328-1.277-1.683-1.277-1.683-1.044-.713.08-.699.08-.699 1.155.082 1.763 1.188 1.763 1.188 1.027 1.76 2.695 1.252 3.35.958.104-.742.402-1.252.732-1.54-2.558-.29-5.247-1.28-5.247-5.695 0-1.258.452-2.285 1.193-3.09-.12-.29-.52-1.46.112-3.045 0 0 .98-.314 3.212 1.18a11.18 11.18 0 0 1 5.848 0c2.23-1.494 3.208-1.18 3.208-1.18.634 1.585.234 2.756.115 3.045.744.805 1.192 1.832 1.192 3.09 0 4.427-2.694 5.4-5.26 5.685.41.355.78 1.056.78 2.13 0 1.54-.014 2.78-.014 3.16 0 .308.206.67.794.556A11.5 11.5 0 0 0 12 .5z" />
+    </svg>
+  );
+}
+
 export default function Home() {
   return (
     <div className="min-h-screen bg-background text-foreground">
@@ -13,14 +43,26 @@ export default function Home() {
             <li><a className="hover:opacity-80" href="#experience">Work</a></li>
             <li><a className="hover:opacity-80" href="#blogs">Blogs</a></li>
             <li><a className="hover:opacity-80" href="#contact">Contact</a></li>
-            <li>
+            <li className="flex items-center gap-3">
               <a
                 className="hover:opacity-80"
                 href="https://www.linkedin.com/in/ankitbajpaimartech/"
                 target="_blank"
                 rel="noopener noreferrer"
+                aria-label="LinkedIn"
+                title="LinkedIn"
               >
-                LinkedIn
+                <LinkedInIcon className="opacity-90" />
+              </a>
+              <a
+                className="hover:opacity-80"
+                href="https://github.com/sfmc99"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="GitHub"
+                title="GitHub"
+              >
+                <GitHubIcon className="opacity-90" />
               </a>
             </li>
           </ul>
@@ -152,8 +194,20 @@ export default function Home() {
             target="_blank"
             rel="noopener noreferrer"
             className="hover:opacity-80"
+            aria-label="LinkedIn"
+            title="LinkedIn"
           >
-            LinkedIn
+            <LinkedInIcon />
+          </a>
+          <a
+            href="https://github.com/sfmc99"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="hover:opacity-80"
+            aria-label="GitHub"
+            title="GitHub"
+          >
+            <GitHubIcon />
           </a>
           <a href="#home" className="hover:opacity-80">Back to top ↑</a>
         </div>
