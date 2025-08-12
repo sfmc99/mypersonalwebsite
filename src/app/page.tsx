@@ -48,7 +48,17 @@ export default function Home() {
       {/* Top Nav */}
       <header className="sticky top-0 z-10 backdrop-blur supports-[backdrop-filter]:bg-background/70 border-b border-black/5 dark:border-white/10">
         <nav className="mx-auto max-w-6xl px-6 py-4 flex items-center justify-between">
-          <a href="#home" className="font-semibold tracking-tight">Ankit Bajpai</a>
+          <a href="#home" className="flex items-center gap-2 font-semibold tracking-tight">
+            <Image
+              src="/PersonalImage.png"
+              alt="Ankit Bajpai"
+              width={28}
+              height={28}
+              className="h-7 w-7 rounded-full object-cover"
+              priority
+            />
+            <span>Ankit Bajpai</span>
+          </a>
           <ul className="hidden sm:flex items-center gap-6 text-sm">
             <li><a className="hover:opacity-80" href="#about">About</a></li>
             <li><a className="hover:opacity-80" href="#experience">Work</a></li>
