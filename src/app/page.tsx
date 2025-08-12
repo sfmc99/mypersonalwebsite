@@ -120,17 +120,15 @@ export default function Home() {
               </a>
             </div>
           </div>
-          <div className="relative aspect-square w-full max-w-[360px] md:max-w-none md:w-[420px] mx-auto">
+          <div className="relative aspect-[4/3] w-full max-w-[420px] md:max-w-none md:w-[560px] mx-auto">
             <div className="absolute inset-0 rounded-2xl bg-gradient-to-br from-blue-500/20 via-cyan-400/10 to-purple-500/20 blur-xl md:blur-2xl" />
-            <div className="relative h-full w-full rounded-2xl border border-black/10 dark:border-white/10 bg-background/60 backdrop-blur-sm flex items-center justify-center">
+            <div className="relative h-full w-full rounded-2xl overflow-hidden border border-black/10 dark:border-white/10 bg-background/60 backdrop-blur-sm">
               <Image
                 src={HeroImage}
                 alt="Ankit Bajpai profile photo"
-                width={160}
-                height={160}
-                className="h-40 w-40 rounded-full object-cover shadow-sm"
-                style={{ objectPosition: "50% 50px" }}
-                sizes="(min-width: 768px) 160px, 160px"
+                fill
+                className="absolute inset-0 h-full w-full object-cover"
+                sizes="(min-width: 768px) 560px, 100vw"
                 quality={80}
                 placeholder="blur"
                 priority
