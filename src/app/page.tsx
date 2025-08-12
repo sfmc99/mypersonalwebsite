@@ -13,6 +13,16 @@ export default function Home() {
             <li><a className="hover:opacity-80" href="#experience">Work</a></li>
             <li><a className="hover:opacity-80" href="#blogs">Blogs</a></li>
             <li><a className="hover:opacity-80" href="#contact">Contact</a></li>
+            <li>
+              <a
+                className="hover:opacity-80"
+                href="https://www.linkedin.com/in/ankitbajpaimartech/"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                LinkedIn
+              </a>
+            </li>
           </ul>
           <a
             href="mailto:ankbajpai1989.ab@gmail.com"
@@ -136,7 +146,17 @@ export default function Home() {
 
       <footer className="mx-auto max-w-6xl px-6 py-10 border-t border-black/5 dark:border-white/10 text-sm flex items-center justify-between">
         <span>© {new Date().getFullYear()} Ankit Bajpai</span>
-        <a href="#home" className="hover:opacity-80">Back to top ↑</a>
+        <div className="flex items-center gap-4">
+          <a
+            href="https://www.linkedin.com/in/ankitbajpaimartech/"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="hover:opacity-80"
+          >
+            LinkedIn
+          </a>
+          <a href="#home" className="hover:opacity-80">Back to top ↑</a>
+        </div>
       </footer>
     </div>
   );

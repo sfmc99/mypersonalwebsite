@@ -2,28 +2,32 @@
 
 export const profile = {
   name: "Ankit Bajpai",
-  title: "Marketing Technologist & Software Engineer",
-  bio: "I  am  writing  to  express  my  interest  in  leadership  roles  within  the  Marketing",
+  title: "MarTech Expert | AI Advisory",
+  bio: "With over a decade of experience in digital marketing and technology consulting, I specialize in leveraging AI and customer data intelligence to create hyper-personalized experiences that drive business growth. As the Head of Digital Marketing Practice at Nagarro, I lead breakthrough strategies that redefine modern marketing for global brands. Let’s connect and explore how Data Intelligence + Technology + AI can transform your customer engagement.",
   experience: [
   {
-    "role": "Marketing Technology Lead",
+    "role": "MarTech Practice Head",
     "company": "",
-    "start": "2022",
+    "start": "2023",
     "end": "Present",
     "bullets": [
-      "Led CDP strategy and implementation across marketing stack.",
-      "Built automation workflows and analytics pipelines.",
-      "Drove AI-assisted personalization and lifecycle programs."
+      "Head - Digital Marketing Practice at Nagarro",
+      "Strategizing Digital Transformations with Thinking Breakthroughs",
+      "Redefining Marketing for Modern Businesses through AI",
+      "MarTech Advisory & AI-driven Customer Data Intelligence Expert"
+
     ]
   },
   {
-    "role": "Software Engineer",
-    "company": "",
-    "start": "2016",
-    "end": "2022",
+    "role": "Senior Manager | Senior Tech Consultant",
+    "company": "adidas",
+    "start": "2022",
+    "end": "2023",
     "bullets": [
-      "Developed data-driven systems enabling reporting and attribution.",
-      "Built services integrating marketing data sources."
+      "Provide consultation to Brand team on implementation strategies in Consumer Engagement",
+      "Oversee platform usage, performance and execution of digitalcommunications at Adidas for Global Markets",
+      "Define roadmap for the next generation consumer communications platforms as a technology consultant",
+      "Define strategies for digital communication and consumer engagement"
     ]
   }
 ],
