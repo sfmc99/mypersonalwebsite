@@ -73,3 +73,8 @@ export const profile = {
   ],
   resumeUrl: "/Ankit_Bajpai_MarTechLeader.pdf",
 } as const;
+
+// Types inferred from the profile object
+export type Profile = typeof profile;
+export type Certification = Profile["certifications"][number];
+export type Blog = Profile["blogs"][number];

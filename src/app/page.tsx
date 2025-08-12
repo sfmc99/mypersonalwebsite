@@ -1,5 +1,5 @@
 import Image from "next/image";
-import { profile } from "@/content/profile";
+import { profile, type Certification, type Blog } from "@/content/profile";
 
 function LinkedInIcon(props: React.SVGProps<SVGSVGElement>) {
   return (
@@ -164,9 +164,9 @@ export default function Home() {
       <section id="certifications" className="mx-auto max-w-6xl px-6 py-12 md:py-16 border-t border-black/5 dark:border-white/10">
         <h2 className="text-2xl md:text-3xl font-semibold tracking-tight">Certifications</h2>
         <p className="mt-2 text-sm text-black/70 dark:text-white/60">Selected certifications and credentials.</p>
-        {Array.isArray((profile as any).certifications) && (profile as any).certifications.length ? (
+        {Array.isArray(profile.certifications) && profile.certifications.length ? (
           <div className="mt-6 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6">
-            {(profile as any).certifications.map((c: any, i: number) => {
+            {profile.certifications.map((c: Certification, i: number) => {
               const featured = i === 0;
               const colSpan = featured ? "lg:col-span-2 lg:row-span-2" : "";
               return (
@@ -176,9 +176,11 @@ export default function Home() {
                 >
                   <div className="flex items-center gap-3">
                     {c.logo ? (
-                      <img
+                      <Image
                         src={c.logo}
                         alt={`${c.issuer || c.title} logo`}
+                        width={32}
+                        height={32}
                         className="h-8 w-8 rounded-md object-contain bg-white/50 dark:bg-white/10 p-1"
                       />
                     ) : (
@@ -237,9 +239,9 @@ export default function Home() {
       <section id="blogs" className="mx-auto max-w-6xl px-6 py-12 md:py-16 border-t border-black/5 dark:border-white/10">
         <h2 className="text-2xl md:text-3xl font-semibold tracking-tight">Blogs</h2>
         <p className="mt-2 text-sm text-black/70 dark:text-white/60">Writing on CDPs, automation, analytics, and AI for marketing.</p>
-        {Array.isArray((profile as any).blogs) && (profile as any).blogs.length ? (
+        {Array.isArray(profile.blogs) && profile.blogs.length ? (
           <div className="mt-6 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6">
-            {(profile as any).blogs.map((b: any, i: number) => (
+            {profile.blogs.map((b: Blog, i: number) => (
               <article key={i} className="rounded-xl border border-black/10 dark:border-white/10 p-5 bg-background/60 hover:bg-black/5 dark:hover:bg-white/5 transition">
                 <div className="flex items-center justify-between gap-3">
                   <h3 className="font-semibold leading-tight line-clamp-2">{b.title}</h3>
