@@ -1,5 +1,6 @@
 import Image from "next/image";
 import { profile, type Certification, type Blog } from "@/content/profile";
+import PersonalImage from "../../public/PersonalImage.png";
 
 function LinkedInIcon(props: React.SVGProps<SVGSVGElement>) {
   return (
@@ -120,14 +121,18 @@ export default function Home() {
             </div>
           </div>
           <div className="relative aspect-square w-full max-w-[360px] md:max-w-none md:w-[420px] mx-auto">
-            <div className="absolute inset-0 rounded-2xl bg-gradient-to-br from-blue-500/20 via-cyan-400/10 to-purple-500/20 blur-2xl" />
-            <div className="relative h-full w-full rounded-2xl border border-black/10 dark:border-white/10 bg-background/60 backdrop-blur flex items-center justify-center">
+            <div className="absolute inset-0 rounded-2xl bg-gradient-to-br from-blue-500/20 via-cyan-400/10 to-purple-500/20 blur-xl md:blur-2xl" />
+            <div className="relative h-full w-full rounded-2xl border border-black/10 dark:border-white/10 bg-background/60 backdrop-blur-sm flex items-center justify-center">
               <Image
-                src="/PersonalImage.png"
+                src={PersonalImage}
                 alt="Ankit Bajpai profile photo"
                 width={160}
                 height={160}
                 className="h-40 w-40 rounded-full object-cover shadow-sm"
+                style={{ objectPosition: "50% 50px" }}
+                sizes="(min-width: 768px) 160px, 160px"
+                quality={80}
+                placeholder="blur"
                 priority
               />
             </div>
@@ -189,6 +194,9 @@ export default function Home() {
                         width={32}
                         height={32}
                         className="h-8 w-8 rounded-md object-contain bg-white/50 dark:bg-white/10 p-1"
+                        loading="lazy"
+                        decoding="async"
+                        sizes="32px"
                       />
                     ) : (
                       <div className="h-8 w-8 rounded-md bg-gradient-to-br from-blue-500/20 via-cyan-400/20 to-purple-500/20 flex items-center justify-center text-xs font-medium">

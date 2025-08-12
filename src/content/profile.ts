@@ -77,7 +77,7 @@ export const profile: Profile = {
       issuer: "Udemy",
       url: "https://www.udemy.com/certificate/UC-9b16f95a-5eb7-4fef-a322-49465de8b4a0/",
       description: "Hands-on certification covering design and implementation of GenAI solutions and workflows.",
-      logo: "https://upload.wikimedia.org/wikipedia/commons/e/ef/Udemy_logo.svg",
+      logo: "/udemy.svg",
       badges: ["GenAI", "Implementation", "LLMs"]
     },
     {
@@ -85,7 +85,7 @@ export const profile: Profile = {
       issuer: "Salesforce",
       url: "",
       description: "Consultant-level expertise in Salesforce solutions across implementation and best practices.",
-      logo: "https://upload.wikimedia.org/wikipedia/commons/2/29/Salesforce.com_logo.svg",
+      logo: "/salesforce.svg",
       badges: ["Salesforce", "Consulting"]
     }
   ],
