@@ -237,20 +237,43 @@ export default function Home() {
       <section id="blogs" className="mx-auto max-w-6xl px-6 py-12 md:py-16 border-t border-black/5 dark:border-white/10">
         <h2 className="text-2xl md:text-3xl font-semibold tracking-tight">Blogs</h2>
         <p className="mt-2 text-sm text-black/70 dark:text-white/60">Writing on CDPs, automation, analytics, and AI for marketing.</p>
-        <div className="mt-6 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6">
-          {/* Placeholder cards */}
-          {[1, 2, 3].map((i) => (
-            <article key={i} className="rounded-xl border border-black/10 dark:border-white/10 p-5 bg-background/60 hover:bg-black/5 dark:hover:bg-white/5 transition">
-              <h3 className="font-semibold">Sample Post #{i}</h3>
-              <p className="mt-2 text-sm text-black/75 dark:text-white/70">
-                Quick thoughts on making marketing systems smarter and more data-driven.
-              </p>
-              <a href="#" className="mt-3 inline-block text-sm underline underline-offset-4 opacity-90 hover:opacity-100">
-                Read more
-              </a>
-            </article>
-          ))}
-        </div>
+        {Array.isArray((profile as any).blogs) && (profile as any).blogs.length ? (
+          <div className="mt-6 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6">
+            {(profile as any).blogs.map((b: any, i: number) => (
+              <article key={i} className="rounded-xl border border-black/10 dark:border-white/10 p-5 bg-background/60 hover:bg-black/5 dark:hover:bg-white/5 transition">
+                <div className="flex items-center justify-between gap-3">
+                  <h3 className="font-semibold leading-tight line-clamp-2">{b.title}</h3>
+                  {b.source ? (
+                    <span className="shrink-0 text-xs opacity-70">{b.source}</span>
+                  ) : null}
+                </div>
+                {b.description ? (
+                  <p className="mt-2 text-sm text-black/75 dark:text-white/70 line-clamp-3">{b.description}</p>
+                ) : null}
+                {b.url ? (
+                  <a
+                    href={b.url}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="mt-3 inline-flex items-center gap-2 text-sm underline underline-offset-4 opacity-90 hover:opacity-100"
+                  >
+                    Read post <span aria-hidden>↗</span>
+                  </a>
+                ) : null}
+              </article>
+            ))}
+          </div>
+        ) : (
+          <div className="mt-6 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6">
+            {[1, 2, 3].map((i) => (
+              <article key={i} className="rounded-xl border border-black/10 dark:border-white/10 p-5 bg-background/60">
+                <div className="h-4 w-24 bg-black/10 dark:bg-white/10 rounded" />
+                <div className="mt-3 h-3 w-full bg-black/10 dark:bg-white/10 rounded" />
+                <div className="mt-2 h-3 w-4/5 bg-black/10 dark:bg-white/10 rounded" />
+              </article>
+            ))}
+          </div>
+        )}
       </section>
 
       {/* Contact */}

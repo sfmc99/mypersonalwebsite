@@ -37,7 +37,7 @@ export const profile = {
       issuer: "UCLA Anderson",
       url: "https://verified.sertifier.com/en/verify/07018855706328/",
       description: "Management program focused on strategy, leadership, and business fundamentals from UCLA Anderson.",
-      logo: "", // optional: place a logo at public/ucla-anderson.png and set path here
+      logo: "https://upload.wikimedia.org/wikipedia/commons/7/72/UCLA_Anderson_School_of_Management_logo.svg",
       badges: ["Management", "Leadership", "Strategy"]
     },
     {
@@ -45,7 +45,7 @@ export const profile = {
       issuer: "Udemy",
       url: "https://www.udemy.com/certificate/UC-9b16f95a-5eb7-4fef-a322-49465de8b4a0/",
       description: "Hands-on certification covering design and implementation of GenAI solutions and workflows.",
-      logo: "", // optional: public/udemy.png
+      logo: "https://upload.wikimedia.org/wikipedia/commons/e/ef/Udemy_logo.svg",
       badges: ["GenAI", "Implementation", "LLMs"]
     },
     {
@@ -53,8 +53,22 @@ export const profile = {
       issuer: "Salesforce",
       url: "",
       description: "Consultant-level expertise in Salesforce solutions across implementation and best practices.",
-      logo: "", // optional: public/salesforce.png
+      logo: "https://upload.wikimedia.org/wikipedia/commons/2/29/Salesforce.com_logo.svg",
       badges: ["Salesforce", "Consulting"]
+    }
+  ],
+  blogs: [
+    {
+      title: "Harnessing Next Best Action (NBA) in Customer Engagement",
+      url: "https://www.linkedin.com/pulse/harnessing-next-best-action-nba-customer-engagement-ankit-bajpai-74suc/?trackingId=K1RcA1hoSc%2BBAg%2B4K18%2FbQ%3D%3D",
+      description: "How NBA frameworks drive timely, relevant interactions across the customer lifecycle.",
+      source: "LinkedIn"
+    },
+    {
+      title: "Why KYC is not enough for Banks",
+      url: "https://www.linkedin.com/pulse/why-kyc-enough-banks-ankit-bajpai-vau2c/?trackingId=K1RcA1hoSc%2BBAg%2B4K18%2FbQ%3D%3D",
+      description: "Beyond compliance—moving from KYC to deep customer understanding for better risk and CX.",
+      source: "LinkedIn"
     }
   ],
   resumeUrl: "/Ankit_Bajpai_MarTechLeader.pdf",
