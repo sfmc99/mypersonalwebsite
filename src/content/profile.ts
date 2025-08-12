@@ -31,5 +31,25 @@ export const profile = {
     ]
   }
 ],
+  certifications: [
+    {
+      title: "Post Graduation Program in Management",
+      issuer: "UCLA Anderson",
+      url: "https://verified.sertifier.com/en/verify/07018855706328/",
+      description: "Management program focused on strategy, leadership, and business fundamentals from UCLA Anderson."
+    },
+    {
+      title: "Generative AI Certified Implementation Expert",
+      issuer: "Udemy",
+      url: "https://www.udemy.com/certificate/UC-9b16f95a-5eb7-4fef-a322-49465de8b4a0/",
+      description: "Hands-on certification covering design and implementation of GenAI solutions and workflows."
+    },
+    {
+      title: "Salesforce Certified Consultant",
+      issuer: "Salesforce",
+      url: "",
+      description: "Consultant-level expertise in Salesforce solutions across implementation and best practices."
+    }
+  ],
   resumeUrl: "/Ankit_Bajpai_MarTechLeader.pdf",
 } as const;

@@ -41,6 +41,7 @@ export default function Home() {
           <ul className="hidden sm:flex items-center gap-6 text-sm">
             <li><a className="hover:opacity-80" href="#about">About</a></li>
             <li><a className="hover:opacity-80" href="#experience">Work</a></li>
+            <li><a className="hover:opacity-80" href="#certifications">Certifications</a></li>
             <li><a className="hover:opacity-80" href="#blogs">Blogs</a></li>
             <li><a className="hover:opacity-80" href="#contact">Contact</a></li>
             <li className="flex items-center gap-3">
@@ -147,6 +148,39 @@ export default function Home() {
             </div>
           ))}
         </div>
+      </section>
+
+      {/* Certifications */}
+      <section id="certifications" className="mx-auto max-w-6xl px-6 py-12 md:py-16 border-t border-black/5 dark:border-white/10">
+        <h2 className="text-2xl md:text-3xl font-semibold tracking-tight">Certifications</h2>
+        <p className="mt-2 text-sm text-black/70 dark:text-white/60">Selected certifications and credentials.</p>
+        {Array.isArray((profile as any).certifications) && (profile as any).certifications.length ? (
+          <div className="mt-6 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6">
+            {(profile as any).certifications.map((c: any, i: number) => (
+              <article key={i} className="rounded-xl border border-black/10 dark:border-white/10 p-5 bg-background/60 hover:bg-black/5 dark:hover:bg-white/5 transition">
+                <h3 className="font-semibold">{c.title}</h3>
+                <div className="mt-1 text-xs text-black/60 dark:text-white/60">{c.issuer}</div>
+                {c.description ? (
+                  <p className="mt-2 text-sm text-black/75 dark:text-white/70">{c.description}</p>
+                ) : null}
+                {c.url ? (
+                  <a
+                    href={c.url}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="mt-3 inline-block text-sm underline underline-offset-4 opacity-90 hover:opacity-100"
+                  >
+                    View credential
+                  </a>
+                ) : (
+                  <span className="mt-3 inline-block text-sm opacity-70">Credential details unavailable</span>
+                )}
+              </article>
+            ))}
+          </div>
+        ) : (
+          <p className="mt-4 text-sm text-black/70 dark:text-white/60">No certifications added yet.</p>
+        )}
       </section>
 
       {/* Blogs */}
