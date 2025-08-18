@@ -46,7 +46,7 @@ export default function Home() {
   return (
     <div className="min-h-screen bg-background text-foreground">
       {/* Top Nav */}
-      <header className="sticky top-0 z-10 backdrop-blur supports-[backdrop-filter]:bg-background/70 border-b border-black/5 dark:border-white/10">
+      <header className="sticky top-10 z-10 backdrop-blur supports-[backdrop-filter]:bg-background/70 border-b border-black/5 dark:border-white/10">
         <nav className="mx-auto max-w-6xl px-6 py-4 flex items-center justify-between">
           <a href="#home" className="flex items-center gap-2 font-semibold tracking-tight">
             <Image

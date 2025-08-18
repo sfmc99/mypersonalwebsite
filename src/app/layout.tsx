@@ -29,6 +29,22 @@ export default function RootLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
+        {/* Site-wide Ticker */}
+        <div className="sticky top-0 z-50 w-full bg-yellow-100 text-yellow-900 dark:bg-yellow-900/30 dark:text-yellow-50 border-b border-black/5 dark:border-white/10 h-10 overflow-hidden">
+          <div className="h-full flex items-center">
+            <div className="w-full overflow-hidden whitespace-nowrap">
+              <div className="inline-block animate-marquee will-change-transform">
+                <span className="mx-6">
+                  This website is 100% AI generated as an experiment by Ankit Bajpai to showcase that AI can code. Platform used is Windsurf Agentic IDE and ChatGPT5
+                </span>
+                <span className="mx-6" aria-hidden="true">
+                  • This website is 100% AI generated as an experiment by Ankit Bajpai to showcase that AI can code. Platform used is Windsurf Agentic IDE and ChatGPT5 •
+                </span>
+              </div>
+            </div>
+          </div>
+        </div>
+
         {children}
       </body>
     </html>

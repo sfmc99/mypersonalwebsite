@@ -31,3 +31,17 @@ html {
 ::selection {
   background: rgba(59, 130, 246, 0.25); /* blue-500 at ~25% */
 }
+
+/* Marquee animation for site-wide ticker */
+@keyframes marquee {
+  0% {
+    transform: translateX(100%);
+  }
+  100% {
+    transform: translateX(-100%);
+  }
+}
+
+.animate-marquee {
+  animation: marquee 25s linear infinite;
+}
