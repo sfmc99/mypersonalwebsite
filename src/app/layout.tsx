@@ -15,10 +15,13 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://mypersonalwebsite-smoky.vercel.app"),
+  metadataBase: new URL("https://ankitbajpai-mypersonalwebsite.vercel.app"),
   title: "Ankit Bajpai | Marketing Technologist & Software Engineer",
   description:
     "Personal website of Ankit Bajpai — Marketing Technologist and Software Engineer specializing in CDPs, Marketing Automation, Analytics, and AI for Marketing.",
+  verification: {
+    google: "wNi7RJVjqnTeT4j__7-cV3XC4nen2jo2jeJiEB4DWOU",
+  },
 };
 
 export default function RootLayout({
