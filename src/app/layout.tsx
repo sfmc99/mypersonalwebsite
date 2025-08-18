@@ -1,4 +1,6 @@
 import type { Metadata } from "next";
+import Script from "next/script";
+import { Analytics } from "@vercel/analytics/react";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 
@@ -29,6 +31,25 @@ export default function RootLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
+        {/* Google Analytics */}
+        {process.env.NEXT_PUBLIC_GA_ID ? (
+          <>
+            <Script
+              src={`https://www.googletagmanager.com/gtag/js?id=${process.env.NEXT_PUBLIC_GA_ID}`}
+              strategy="afterInteractive"
+            />
+            <Script id="ga-init" strategy="afterInteractive">
+              {`
+                window.dataLayer = window.dataLayer || [];
+                function gtag(){dataLayer.push(arguments);}
+                gtag('js', new Date());
+                gtag('config', '${process.env.NEXT_PUBLIC_GA_ID}', {
+                  page_path: window.location.pathname,
+                });
+              `}
+            </Script>
+          </>
+        ) : null}
         {/* Site-wide Ticker */}
         <div className="sticky top-0 z-50 w-full bg-yellow-100 text-yellow-900 dark:bg-yellow-900/30 dark:text-yellow-50 border-b border-black/5 dark:border-white/10 h-10 overflow-hidden">
           <div className="h-full flex items-center">
@@ -46,6 +67,8 @@ export default function RootLayout({
         </div>
 
         {children}
+        {/* Vercel Analytics */}
+        <Analytics />
       </body>
     </html>
   );
