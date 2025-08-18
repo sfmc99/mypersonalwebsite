@@ -19,9 +19,9 @@ export const metadata: Metadata = {
   title: "Ankit Bajpai | Marketing Technologist & Software Engineer",
   description:
     "Personal website of Ankit Bajpai — Marketing Technologist and Software Engineer specializing in CDPs, Marketing Automation, Analytics, and AI for Marketing.",
-  verification: {
-    google: "wNi7RJVjqnTeT4j__7-cV3XC4nen2jo2jeJiEB4DWOU",
-  },
+  verification: process.env.NEXT_PUBLIC_GOOGLE_SITE_VERIFICATION
+    ? { google: process.env.NEXT_PUBLIC_GOOGLE_SITE_VERIFICATION }
+    : undefined,
 };
 
 export default function RootLayout({
