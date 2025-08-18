@@ -19,6 +19,9 @@ export const metadata: Metadata = {
   title: "Ankit Bajpai | Marketing Technologist & Software Engineer",
   description:
     "Personal website of Ankit Bajpai — Marketing Technologist and Software Engineer specializing in CDPs, Marketing Automation, Analytics, and AI for Marketing.",
+  alternates: {
+    canonical: "/",
+  },
   verification: process.env.NEXT_PUBLIC_GOOGLE_SITE_VERIFICATION
     ? { google: process.env.NEXT_PUBLIC_GOOGLE_SITE_VERIFICATION }
     : undefined,
@@ -34,6 +37,35 @@ export default function RootLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
+        {/* JSON-LD Structured Data */}
+        <Script id="ld-json" type="application/ld+json" strategy="afterInteractive">
+          {JSON.stringify({
+            "@context": "https://schema.org",
+            "@graph": [
+              {
+                "@type": "WebSite",
+                "url": "https://ankitbajpai-mypersonalwebsite.vercel.app/",
+                "name": "Ankit Bajpai | Marketing Technologist & Software Engineer",
+                "potentialAction": {
+                  "@type": "SearchAction",
+                  "target": "https://www.google.com/search?q={search_term_string}",
+                  "query-input": "required name=search_term_string"
+                }
+              },
+              {
+                "@type": "Person",
+                "name": "Ankit Bajpai",
+                "url": "https://ankitbajpai-mypersonalwebsite.vercel.app/",
+                "sameAs": [
+                  "https://www.linkedin.com/in/ankitbajpaimartech/",
+                  "https://github.com/sfmc99"
+                ],
+                "email": "mailto:ankbajpai1989.ab@gmail.com",
+                "jobTitle": "Marketing Technologist & Software Engineer"
+              }
+            ]
+          })}
+        </Script>
         {/* Google Analytics */}
         {process.env.NEXT_PUBLIC_GA_ID ? (
           <>
